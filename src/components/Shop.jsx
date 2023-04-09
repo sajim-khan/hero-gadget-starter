@@ -1,13 +1,17 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React from "react";
+import { useLoaderData } from "react-router-dom";
 
 const Shop = () => {
-    // 
-    return (
-        <div>
-            <h1>Shop</h1>
-        </div>
-    );
+  const productData = useLoaderData();
+  console.log(productData);
+  return (
+    <div>
+      {productData.map((product) => (
+        <p key={product.id}>{product.name}</p>
+      ))}
+      <h1>Name: </h1>
+    </div>
+  );
 };
 
 export default Shop;

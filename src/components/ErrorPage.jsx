@@ -3,13 +3,14 @@ import { Link, useRouteError } from 'react-router-dom'
 
 const ErrorPage = () => {
   const { error, status } = useRouteError()
+  console.log(error.message);
   return (
     <section className='flex items-center h-screen p-16 bg-gray-100 text-gray-900'>
       <div className='container flex flex-col items-center justify-center px-5 mx-auto my-8'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 512 512'
-          className='w-40 h-40 text-gray-600'
+          className='w-20 h-20 text-gray-600'
         >
           <path
             fill='currentColor'
@@ -32,7 +33,7 @@ const ErrorPage = () => {
           ></polygon>
         </svg>
         <div className='max-w-md text-center'>
-          <h2 className='mb-8 font-extrabold text-9xl text-gray-600'>
+          <h2 className='mb-8 font-extrabold text-7xl text-gray-700'>
             <span className='sr-only'>Error</span> {status || 404}
           </h2>
           <p className='text-2xl font-semibold md:text-3xl mb-8'>
@@ -40,7 +41,7 @@ const ErrorPage = () => {
           </p>
           <Link
             to='/'
-            className='px-8 py-3 font-semibold rounded bg-cyan-200 text-gray-900'
+            className='px-8 py-3 font-semibold rounded bg-cyan-700 text-gray-300'
           >
             Back to homepage
           </Link>
